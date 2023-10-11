@@ -1,0 +1,7 @@
+C:\Git\Universidad\Programacion 3\PracticaExamen1\bin\Debug\PracticaExamen1.exe.config
+C:\Git\Universidad\Programacion 3\PracticaExamen1\bin\Debug\PracticaExamen1.exe
+C:\Git\Universidad\Programacion 3\PracticaExamen1\bin\Debug\PracticaExamen1.pdb
+C:\Git\Universidad\Programacion 3\PracticaExamen1\obj\Debug\PracticaExamen1.csproj.AssemblyReference.cache
+C:\Git\Universidad\Programacion 3\PracticaExamen1\obj\Debug\PracticaExamen1.csproj.CoreCompileInputs.cache
+C:\Git\Universidad\Programacion 3\PracticaExamen1\obj\Debug\PracticaExamen1.exe
+C:\Git\Universidad\Programacion 3\PracticaExamen1\obj\Debug\PracticaExamen1.pdb
