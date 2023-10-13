@@ -43,10 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cls_Curso.cs" />
     <Compile Include="Cls_Estudiante.cs" />
     <Compile Include="Cls_Menu.cs" />
-    <Compile Include="Cls_Profesor.cs" />
+    <Compile Include="Cls_Reportes.cs" />
+    <Compile Include="Cls_subMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

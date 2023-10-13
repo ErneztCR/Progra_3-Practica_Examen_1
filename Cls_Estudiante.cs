@@ -23,6 +23,14 @@ namespace PracticaExamen1
         }
 
         // metodos
+        public static string BuscarCedula() // metodo para buscar un estudiante por cedula
+        {
+            string ced = "";
+            Console.WriteLine("Ingrese la cedula del estudiante");
+            ced = Console.ReadLine();
+            return ced;
+        }
+
         public static void Inicializar()
         {
             Console.Clear();
@@ -32,15 +40,6 @@ namespace PracticaExamen1
 
             Console.WriteLine("Vectores inicializados...");
             Console.ReadLine();
-        }
-
-        // metodo para buscar un estudiante por cedula
-        public static string BuscarCedula() 
-        {
-            string ced = "";
-            Console.WriteLine("Ingrese la cedula del estudiante");
-            ced = Console.ReadLine();
-            return ced;
         }
 
         public static void incluirEstudiante()
@@ -57,23 +56,6 @@ namespace PracticaExamen1
                 Nombre[i] = Console.ReadLine();
                 Console.WriteLine("Ingrese la nota del estudiante " + (i + 1) + "/" + cantidad + ":");
                 float.TryParse(Console.ReadLine(), out Nota[i]);
-            }
-
-
-        }
-
-        public static void modificarEstudiante(string id) {
-
-            for (int i = 0; i < cantidad; i++)
-            {
-                if (id == Cedula[i])
-                {
-                    Console.WriteLine("Ingrese el nuevo nombre del estudiante:");
-                    Nombre[i] = Console.ReadLine();
-                    Console.WriteLine("Ingrese la nueva nota del estudiante:");
-                    float.TryParse(Console.ReadLine(), out Nota[i]);
-                    break;
-                }
             }
         }
 
@@ -92,7 +74,23 @@ namespace PracticaExamen1
             }
         }
 
-        public static void borrarEstudiante(string id)
+        public static void modificarEstudiante(string id) 
+        {
+
+            for (int i = 0; i < cantidad; i++)
+            {
+                if (id == Cedula[i])
+                {
+                    Console.WriteLine("Ingrese el nuevo nombre del estudiante:");
+                    Nombre[i] = Console.ReadLine();
+                    Console.WriteLine("Ingrese la nueva nota del estudiante:");
+                    float.TryParse(Console.ReadLine(), out Nota[i]);
+                    break;
+                }
+            }
+        }
+
+        public static void eliminarEstudiante(string id)
         {
 
             for (int i = 0; i < cantidad; i++)
