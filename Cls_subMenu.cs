@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PracticaExamen1.PracticaExamen1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,14 +29,13 @@ namespace PracticaExamen1
 
                 switch (opcion)
                 {
-                    case 1:
-                        Console.WriteLine("Reporte Estudiantes por Condición");
+                    case 1: // Reporte Estudiantes por Condición
+                        Cls_Reportes.reporteEstudiantesPorCondicion();
                         break;
-                    case 2:
-                        Console.WriteLine("Reporte Todos los datos");
+                    case 2: // Reporte Todos los datos
+
                         break;
-                    case 3:
-                        // regresar al menu principal
+                    case 3: // regresar al menu principal
                         Cls_Menu.desplegar();
                         return;
                     default:

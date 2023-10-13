@@ -31,6 +31,7 @@ namespace PracticaExamen1
             return ced;
         }
 
+        // Inicializa los vectores Cedula, Nombre y Nota con valores vacíos.
         public static void Inicializar()
         {
             Console.Clear();
@@ -42,6 +43,7 @@ namespace PracticaExamen1
             Console.ReadLine();
         }
 
+        // Incluye un nuevo estudiante en los vectores Cedula, Nombre y Nota.
         public static void incluirEstudiante()
         {
 
@@ -59,6 +61,7 @@ namespace PracticaExamen1
             }
         }
 
+        // Consulta la información de un estudiante por cédula.
         public static void consultarEstudiante(string id)
         {
 
@@ -74,6 +77,7 @@ namespace PracticaExamen1
             }
         }
 
+        // Modifica la información de un estudiante por cédula.
         public static void modificarEstudiante(string id) 
         {
 
@@ -90,6 +94,7 @@ namespace PracticaExamen1
             }
         }
 
+        // Elimina la información de un estudiante por cédula.
         public static void eliminarEstudiante(string id)
         {
 

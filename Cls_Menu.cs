@@ -51,32 +51,32 @@ namespace PracticaExamen1
 
                 switch (opcion)
                 {
-                    case 1:
+                    case 1: // Inicializar programa
                         Cls_Estudiante.Inicializar();
                         inicializado = true;
                         break;
-                    case 2:
+                    case 2: // Incluir Estudiantes
                         Cls_Estudiante.incluirEstudiante();
                         break;
-                    case 3:
+                    case 3: // Consultar Estudiantes
                         Console.WriteLine("Consultar Estudiantes");
                         Cls_Estudiante.consultarEstudiante(Cls_Estudiante.BuscarCedula());
                         break;
-                    case 4:
+                    case 4: // Modificar Estudiantes
                         Console.WriteLine("Modificar Estudiantes");
                         Cls_Estudiante.modificarEstudiante(Cls_Estudiante.BuscarCedula());
                         
                         break;
-                    case 5:
+                    case 5: // Eliminar Estudiantes
                         Console.WriteLine("Eliminar Estudiantes");
                         Cls_Estudiante.eliminarEstudiante(Cls_Estudiante.BuscarCedula());
                         break;
-                    case 6:
+                    case 6: // Submenú Reportes
                         Console.Clear();
                         Console.WriteLine("Submenú Reportes");
                         Cls_subMenu.desplegarsubMenu();
                         return;
-                    case 7:
+                    case 7: // Salir
                         Console.Clear();
                         Console.WriteLine("Gracias por usar el programa...Saliendo..");
                         return;

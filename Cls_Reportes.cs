@@ -12,30 +12,22 @@ namespace PracticaExamen1
     {
         internal class Cls_Reportes
         {
-            static string[] cedulas;
-            static string[] nombres;
-            static float[] notas;
-
-            public static void ConfigurarDatos(string[] cedulas, string[] nombres, float[] notas)
-            {
-                Cls_Reportes.cedulas = cedulas;
-                Cls_Reportes.nombres = nombres;
-                Cls_Reportes.notas = notas;
-            }
-
             public static void reporteEstudiantesPorCondicion()
             {
                 int opcion = 0;
                 do
                 {
-                    Console.WriteLine("*******Reporte Estudiantes por Condicion******");
+                    Console.Clear();
+                    Console.WriteLine("Reporte Estudiantes por Condición");
+                    Console.WriteLine(" ");
                     Console.WriteLine("1. Aprobado(s)");
                     Console.WriteLine("2. Reprobado(s)");
                     Console.WriteLine("3. Aplazado(s)");
                     Console.WriteLine("4. Regresar al Sub-menu");
-                    Console.WriteLine("Seleccione una opcion: ");
+                    Console.WriteLine(" ");
+                    Console.Write("Seleccione una opción: ");
 
-                    int.TryParse(Console.ReadLine(), out opcion); // evalúa si el valor ingresado es un número
+                    int.TryParse(Console.ReadLine(), out opcion);
 
                     switch (opcion)
                     {
@@ -50,10 +42,11 @@ namespace PracticaExamen1
                             break;
                         case 4:
                             // Regresar al menú principal
+                            Cls_subMenu.desplegarsubMenu();
                             return;
                         default:
                             Console.Clear();
-                            Console.WriteLine("Opcion no valida");
+                            Console.WriteLine("Opción no válida");
                             Console.WriteLine(" ");
                             Console.WriteLine("Presione cualquier tecla para volver al menú");
                             Console.ReadLine();
@@ -64,90 +57,127 @@ namespace PracticaExamen1
 
             public static void Est_aprobados()
             {
-                int numEstudiantesRegistrados = cedulas.Length;
-                bool NohayEstu_Apro = true;
+                Console.Clear();
+                Console.WriteLine("Estudiantes Aprobados: ");
+                bool estudiantesAprobados = false;
 
-                if (numEstudiantesRegistrados > 0)
-                { // Verifica que hayan estudiantes dentro del sistema.
-                    Console.WriteLine("Estudiantes Aprobados: ");
-                    for (int i = 0; i < numEstudiantesRegistrados; i++)
-                    {
-                        if (notas[i] >= 70)
-                        { // Verifica si hay estudiantes aprobados.
-                            Console.WriteLine("Cedula: " + cedulas[i]
-                                    + " Nombre: " + nombres[i]
-                                    + " Nota: " + notas[i]);
-                            NohayEstu_Apro = false;
-                        }
-                    }
-                    if (NohayEstu_Apro)
-                    {
-                        Console.WriteLine("\033[1mNo hay estudiantes aprobados.\033[0m\n");
-                    }
-                }
-                else
+                for (int i = 0; i < Cls_Estudiante.Cedula.Length; i++)
                 {
-                    Console.WriteLine("\n\033[1mNo hay estudiantes registrados.\033[0m");
+                    if (Cls_Estudiante.Nota[i] >= 70)
+                    {
+                        Console.WriteLine("Cedula: " + Cls_Estudiante.Cedula[i]);
+                        Console.WriteLine("Nombre: " + Cls_Estudiante.Nombre[i]);
+                        Console.WriteLine("Nota: " + Cls_Estudiante.Nota[i]);
+                        estudiantesAprobados = true;
+                    }
                 }
+
+                if (!estudiantesAprobados)
+                {
+                    Console.WriteLine("No hay estudiantes aprobados.");
+                }
+
+                Console.ReadLine();
             }
 
             public static void Est_reprobados()
             {
-                int numEstudiantesRegistrados = cedulas.Length;
+                Console.Clear();
+                Console.WriteLine("Estudiantes Reprobados:");
+                bool estudiantesReprobados = false;
 
-                if (numEstudiantesRegistrados > 0)
-                { // Verifica que hayan estudiantes dentro del sistema.
-                    Console.WriteLine("Estudiantes Reprobados:");
-                    bool hayEstudiantesReprobados = true;
-                    for (int i = 0; i < numEstudiantesRegistrados; i++)
-                    {
-                        if (notas[i] <= 59)
-                        {// Verifica si hay estudiantes reprobados.
-                            Console.WriteLine("Cedula: " + cedulas[i]
-                                    + " Nombre: " + nombres[i]
-                                    + " Nota: " + notas[i]);
-                            hayEstudiantesReprobados = false;
-                        }
-                    }
-                    if (hayEstudiantesReprobados)
-                    {
-                        Console.WriteLine("\n\033[1mNo hay estudiantes reprobados.\033[0m");
-                    }
-                }
-                else
+                for (int i = 0; i < Cls_Estudiante.Cedula.Length; i++)
                 {
-                    Console.WriteLine("\n\033[1mNo hay estudiantes registrados.\033[0m");
+                    if (Cls_Estudiante.Nota[i] < 60)
+                    {
+                        Console.WriteLine("Cedula: " + Cls_Estudiante.Cedula[i]);
+                        Console.WriteLine("Nombre: " + Cls_Estudiante.Nombre[i]);
+                        Console.WriteLine("Nota: " + Cls_Estudiante.Nota[i]);
+                        estudiantesReprobados = true;
+                    }
                 }
+
+                if (!estudiantesReprobados)
+                {
+                    Console.WriteLine("No hay estudiantes reprobados.");
+                }
+
+                Console.ReadLine();
             }
 
             public static void Est_aplazados()
             {
-                int numEstudiantesRegistrados = cedulas.Length;
+                Console.Clear();
+                Console.WriteLine("Estudiantes Aplazados:");
+                bool estudiantesAplazados = false;
 
-                if (numEstudiantesRegistrados > 0)
-                {// Verifica que hayan estudiantes dentro del sistema.
-                    Console.WriteLine("Estudiantes Aplazados:");
-                    bool hayEstudiantesAplazados = true;
-                    for (int i = 0; i < numEstudiantesRegistrados; i++)
-                    { // Verifica si hay estudiantes aplazados.
-                        if (notas[i] < 70 && notas[i] >= 60)
+                for (int i = 0; i < Cls_Estudiante.Cedula.Length; i++)
+                {
+                    if (Cls_Estudiante.Nota[i] >= 60 && Cls_Estudiante.Nota[i] < 70)
+                    {
+                        Console.WriteLine("Cedula: " + Cls_Estudiante.Cedula[i]);
+                        Console.WriteLine("Nombre: " + Cls_Estudiante.Nombre[i]);
+                        Console.WriteLine("Nota: " + Cls_Estudiante.Nota[i]);
+                        estudiantesAplazados = true;
+                    }
+                }
+
+                if (!estudiantesAplazados)
+                {
+                    Console.WriteLine("No hay estudiantes aplazados.");
+                }
+
+                Console.ReadLine();
+            }
+
+            // Imprime un reporte con todos los datos de los estudiantes.
+            public static void reporteTodosLosDatos(string[] cedulas, string[] nombres, float[] notas, string[] condiciones)
+            {
+                int numEstudiantes = cedulas.Length;
+
+                if (numEstudiantes > 0)
+                {
+                    // Ordena los estudiantes por nota de mayor a menor
+                    for (int i = 0; i < numEstudiantes - 1; i++)
+                    {
+                        for (int j = 0; j < numEstudiantes - i - 1; j++)
                         {
-                            hayEstudiantesAplazados = false;
-                            Console.WriteLine("Cedula: " + cedulas[i]
-                                    + " Nombre: " + nombres[i]
-                                    + " Nota: " + notas[i]);
+                            if (notas[j] < notas[j + 1])
+                            {
+                                // Realiza un intercambio en todos los arrays
+                                Swap(ref cedulas[j], ref cedulas[j + 1]);
+                                Swap(ref nombres[j], ref nombres[j + 1]);
+                                Swap(ref notas[j], ref notas[j + 1]);
+                                Swap(ref condiciones[j], ref condiciones[j + 1]);
+                            }
                         }
                     }
-                    if (hayEstudiantesAplazados)
+
+                    // Imprime el encabezado del reporte
+                    Console.WriteLine("Cedula\t\t\tNombre\t\t\tNota\t\t\tCondicion");
+                    Console.WriteLine("============================================");
+
+                    // Imprime los datos de los estudiantes ordenados
+                    for (int i = 0; i < numEstudiantes; i++)
                     {
-                        Console.WriteLine("\n\033[1mNo hay estudiantes aplazados.\033[0m");
+                        Console.WriteLine($"{cedulas[i]}\t\t\t{nombres[i]}\t\t\t{notas[i]}\t\t\t{condiciones[i]}");
+                        Console.WriteLine("============================================");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("\n\033[1mNo hay estudiantes registrados.\033[0m");
+                    Console.WriteLine("\nNo hay estudiantes registrados.");
                 }
             }
+
+            // Intercambia los valores de dos variables para ordenar los estudiantes por nota de mayor a menor
+            private static void Swap<T>(ref T a, ref T b)
+            {
+                T temp = a;
+                a = b;
+                b = temp;
+            }
+
         }
     }
 }
