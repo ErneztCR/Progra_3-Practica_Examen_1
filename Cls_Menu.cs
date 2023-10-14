@@ -59,7 +59,6 @@ namespace PracticaExamen1
                         Cls_Estudiante.incluirEstudiante();
                         break;
                     case 3: // Consultar Estudiantes
-                        Console.WriteLine("Consultar Estudiantes");
                         Cls_Estudiante.consultarEstudiante(Cls_Estudiante.BuscarCedula());
                         break;
                     case 4: // Modificar Estudiantes

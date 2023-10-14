@@ -33,7 +33,7 @@ namespace PracticaExamen1
                         Cls_Reportes.reporteEstudiantesPorCondicion();
                         break;
                     case 2: // Reporte Todos los datos
-
+                        Cls_Reportes.reporteTodosLosDatos();
                         break;
                     case 3: // regresar al menu principal
                         Cls_Menu.desplegar();

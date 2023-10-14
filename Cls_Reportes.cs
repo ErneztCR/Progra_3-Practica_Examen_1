@@ -59,15 +59,19 @@ namespace PracticaExamen1
             {
                 Console.Clear();
                 Console.WriteLine("Estudiantes Aprobados: ");
+                Console.WriteLine(" ");
+                Console.WriteLine("Cedula\t\tNombre\t\t\tNota");
+                Console.WriteLine("================================================");
                 bool estudiantesAprobados = false;
 
                 for (int i = 0; i < Cls_Estudiante.Cedula.Length; i++)
                 {
                     if (Cls_Estudiante.Nota[i] >= 70)
                     {
-                        Console.WriteLine("Cedula: " + Cls_Estudiante.Cedula[i]);
-                        Console.WriteLine("Nombre: " + Cls_Estudiante.Nombre[i]);
-                        Console.WriteLine("Nota: " + Cls_Estudiante.Nota[i]);
+                        Console.WriteLine(" ");
+                        Console.WriteLine($"{Cls_Estudiante.Cedula[i]}\t{Cls_Estudiante.Nombre[i]}\t\t{Cls_Estudiante.Nota[i]}");
+                        Console.WriteLine("================================================");
+
                         estudiantesAprobados = true;
                     }
                 }
@@ -84,15 +88,18 @@ namespace PracticaExamen1
             {
                 Console.Clear();
                 Console.WriteLine("Estudiantes Reprobados:");
+                Console.WriteLine(" ");
+                Console.WriteLine("Cedula\t\tNombre\t\t\tNota");
+                Console.WriteLine("================================================");
                 bool estudiantesReprobados = false;
 
                 for (int i = 0; i < Cls_Estudiante.Cedula.Length; i++)
                 {
                     if (Cls_Estudiante.Nota[i] < 60)
                     {
-                        Console.WriteLine("Cedula: " + Cls_Estudiante.Cedula[i]);
-                        Console.WriteLine("Nombre: " + Cls_Estudiante.Nombre[i]);
-                        Console.WriteLine("Nota: " + Cls_Estudiante.Nota[i]);
+                        Console.WriteLine(" ");
+                        Console.WriteLine($"{Cls_Estudiante.Cedula[i]}\t{Cls_Estudiante.Nombre[i]}\t\t{Cls_Estudiante.Nota[i]}");
+                        Console.WriteLine("================================================");
                         estudiantesReprobados = true;
                     }
                 }
@@ -109,15 +116,18 @@ namespace PracticaExamen1
             {
                 Console.Clear();
                 Console.WriteLine("Estudiantes Aplazados:");
+                Console.WriteLine(" ");
+                Console.WriteLine("Cedula\t\tNombre\t\t\tNota");
+                Console.WriteLine("================================================");
                 bool estudiantesAplazados = false;
 
                 for (int i = 0; i < Cls_Estudiante.Cedula.Length; i++)
                 {
                     if (Cls_Estudiante.Nota[i] >= 60 && Cls_Estudiante.Nota[i] < 70)
                     {
-                        Console.WriteLine("Cedula: " + Cls_Estudiante.Cedula[i]);
-                        Console.WriteLine("Nombre: " + Cls_Estudiante.Nombre[i]);
-                        Console.WriteLine("Nota: " + Cls_Estudiante.Nota[i]);
+                        Console.WriteLine(" ");
+                        Console.WriteLine($"{Cls_Estudiante.Cedula[i]}\t{Cls_Estudiante.Nombre[i]}\t\t{Cls_Estudiante.Nota[i]}");
+                        Console.WriteLine("================================================");
                         estudiantesAplazados = true;
                     }
                 }
@@ -167,7 +177,10 @@ namespace PracticaExamen1
                 else
                 {
                     Console.WriteLine("\nNo hay estudiantes registrados.");
+                    Console.WriteLine();
                 }
+
+                Console.ReadLine();
             }
 
             // Intercambia los valores de dos variables para ordenar los estudiantes por nota de mayor a menor

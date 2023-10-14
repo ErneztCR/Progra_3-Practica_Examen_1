@@ -25,7 +25,11 @@ namespace PracticaExamen1
         // metodos
         public static string BuscarCedula() // metodo para buscar un estudiante por cedula
         {
+            Console.Clear();
             string ced = "";
+
+            Console.WriteLine("---CONSULTAS DE ESTUDIANTE(S)---");
+            Console.WriteLine(" ");
             Console.WriteLine("Ingrese la cedula del estudiante");
             ced = Console.ReadLine();
             return ced;
@@ -50,7 +54,7 @@ namespace PracticaExamen1
             for (int i = 0; i < cantidad; i++)
             {
                 Console.Clear();
-                Console.WriteLine("-------Incluir Estudiantes-------");
+                Console.WriteLine("-------INCLUIR ESTUDIANTE(S)-------");
                 Console.WriteLine(" ");
                 Console.WriteLine("Ingrese la cedula del estudiante " + (i + 1) + "/" + cantidad + ":");
                 Cedula[i] = Console.ReadLine();
@@ -58,6 +62,10 @@ namespace PracticaExamen1
                 Nombre[i] = Console.ReadLine();
                 Console.WriteLine("Ingrese la nota del estudiante " + (i + 1) + "/" + cantidad + ":");
                 float.TryParse(Console.ReadLine(), out Nota[i]);
+
+                Console.Clear();
+                Console.WriteLine("Estudiante incluido correctamente");
+                Console.ReadLine();
             }
         }
 
@@ -69,9 +77,14 @@ namespace PracticaExamen1
             {
                 if (id == Cedula[i])
                 {
-                    Console.WriteLine("Cedula: " + Cedula[i]);
-                    Console.WriteLine("Nombre: " + Nombre[i]);
-                    Console.WriteLine("Nota: " + Nota[i]);
+                    Console.Clear();
+                    Console.WriteLine("-------CONSULTA DE ESTUDIANTE-------");
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Cedula\t\tNombre\t\t\tNota");
+                    Console.WriteLine("================================================");
+                    Console.WriteLine($"{Cedula[i]}\t{Nombre[i]}\t{Nota[i]}");
+                    Console.WriteLine("================================================");
+                    Console.ReadLine();
                     break;
                 }
             }
