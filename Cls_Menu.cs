@@ -64,7 +64,6 @@ namespace PracticaExamen1
                     case 4: // Modificar Estudiantes
                         Console.WriteLine("Modificar Estudiantes");
                         Cls_Estudiante.modificarEstudiante(Cls_Estudiante.BuscarCedula());
-                        
                         break;
                     case 5: // Eliminar Estudiantes
                         Console.WriteLine("Eliminar Estudiantes");
@@ -74,11 +73,11 @@ namespace PracticaExamen1
                         Console.Clear();
                         Console.WriteLine("Submenú Reportes");
                         Cls_subMenu.desplegarsubMenu();
-                        return;
+                        break;
                     case 7: // Salir
                         Console.Clear();
                         Console.WriteLine("Gracias por usar el programa...Saliendo..");
-                        return;
+                        break;
                     default:
                         Console.Clear();
                         Console.WriteLine("Opcion no valida");

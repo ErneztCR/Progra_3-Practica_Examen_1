@@ -37,7 +37,7 @@ namespace PracticaExamen1
                         break;
                     case 3: // regresar al menu principal
                         Cls_Menu.desplegar();
-                        return;
+                        break;
                     default:
                         Console.Clear();
                         Console.WriteLine("Opcion no valida");
@@ -47,7 +47,7 @@ namespace PracticaExamen1
                         break;
                 }
 
-            } while (opcion != 3);
+            } while (opcion != 4);
         }
     }
 }
